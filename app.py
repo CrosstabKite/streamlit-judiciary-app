@@ -32,7 +32,7 @@ cohort_level_counts = df[cohort_var].value_counts()
 all_cohort_levels = sorted(cohort_level_counts.index)
 
 
-select_all_levels = st.sidebar.button("Select all cohort levels")
+select_all_levels = st.sidebar.button("Select all cohort levels (default)")
 select_top_levels = st.sidebar.button("Select most frequent cohort levels")
 
 select_specific_levels = st.sidebar.multiselect(
@@ -48,7 +48,7 @@ elif select_top_levels:
 elif select_specific_levels:
     chosen_levels = select_specific_levels
 else:
-    chosen_levels = []
+    chosen_levels = all_cohort_levels
 
 
 ## Process the impact of user inputs.
